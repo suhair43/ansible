@@ -1,6 +1,6 @@
 ---
  - name: Install java
-   hosts: 3.144.14.119
+   hosts: 3.137.167.44
    gather_facts: true
    become: yes  
    tasks:
@@ -9,14 +9,14 @@
         name: java-1.8.0-openjdk
     - name: Downloading tomcat
       get_url:
-        url: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.73/bin/apache-tomcat-8.5.73.tar.gz
+        url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.16/bin/apache-tomcat-10.0.16.tar.gz
         dest: /home/admin
     - name: Extracting tomcat
       unarchive:
-        src: "/home/admin/apache-tomcat-8.5.73.tar.gz"
+        src: "/home/admin/apache-tomcat-10.0.16.tar.gz"
         dest: /home/admin
         remote_src: yes
-    - name: Renaming tocat home
-      command: mv /home/admin/apache-tomcat-8.5.73 /home/admin/tomcat
+    - name: Renaming tomcat home
+      command: mv /home/admin/apache-tomcat-10.0.16 /home/admin/tomcat
     - name: Starting tomcat
       shell: nohup /home/admin/tomcat/bin/startup.sh &
