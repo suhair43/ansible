@@ -1,6 +1,6 @@
 ---
  - name: Install java
-   hosts: 3.137.167.44
+   hosts: 3.145.10.128
    gather_facts: true
    become: yes  
    tasks:
